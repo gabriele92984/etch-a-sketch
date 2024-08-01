@@ -1,2 +1,2 @@
 # etch-a-sketch
-In this project I will be creating a pretty neat toy to flex my DOM manipulation skills. I am going to build a browser version of something between a sketchpad and an Etch-A-Sketch
+I will create a pretty neat toy to flex my DOM manipulation skills in this project. I will build a browser version of something between a sketchpad and an Etch-A-Sketch.
