@@ -1,23 +1,21 @@
-const GRIDSIDE = 600;
-let rows = 16;
-let cols = 16;
+const squareArea = 600;
+let gridSize = 16; 
 
+const grid = document.querySelector("#grid");
+grid.style.width = `${squareArea}px`;
+grid.style.width = `${squareArea}px`;
 
-const sketchArea = document.querySelector("#sketch-area");
-sketchArea.style.width = `${GRIDSIDE}px`;
-sketchArea.style.height = `${GRIDSIDE}px`;
+function createGrid() {
 
-
-function createGridCells() {
-  for (let i = 0; i < (rows * cols); i++) {
+  for (let i = 0; i < (Math.pow(gridSize, 2)); i++) {
     const gridCell = document.createElement("div");
 
-    gridCell.style.width = `${(GRIDSIDE / cols) - 2}px`;
-    gridCell.style.height = `${(GRIDSIDE / rows) - 2}px`;
+    gridCell.style.width = `${(squareArea / gridSize) - 2}px`;
+    gridCell.style.height = `${(squareArea / gridSize) - 2}px`;
     gridCell.classList.add("cell");
 
-    sketchArea.appendChild(gridCell);     
+    grid.appendChild(gridCell);
   }
 }
 
-createGridCells();
+createGrid();
