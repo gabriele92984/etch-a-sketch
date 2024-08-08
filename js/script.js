@@ -1,17 +1,17 @@
-const squareArea = 600;
-let gridSize = 16; 
+const gridArea = 600;
+let cellSize = 16; 
 
 const grid = document.querySelector("#grid");
-grid.style.width = `${squareArea}px`;
-grid.style.width = `${squareArea}px`;
+grid.style.width = `${gridArea}px`;
+grid.style.height = `${gridArea}px`;
 
 function createGrid() {
 
-  for (let i = 0; i < (Math.pow(gridSize, 2)); i++) {
+  for (let i = 0; i < (Math.pow(cellSize, 2)); i++) {
     const gridCell = document.createElement("div");
 
-    gridCell.style.width = `${(squareArea / gridSize) - 2}px`;
-    gridCell.style.height = `${(squareArea / gridSize) - 2}px`;
+    gridCell.style.width = `${(gridArea / cellSize) -2}px`;
+    gridCell.style.height = `${(gridArea / cellSize) -2}px`;
     gridCell.classList.add("cell");
 
     grid.appendChild(gridCell);
@@ -19,3 +19,19 @@ function createGrid() {
 }
 
 createGrid();
+
+
+const gridCell = document.querySelectorAll('.cell');
+
+    // Add event listeners for hover effect
+    gridCell.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.classList.add('hovered');
+      });
+    });
+
+
+    // Add event listeners for remove hover effect 
+    /* item.addEventListener('mouseleave', () => {
+        item.classList.remove('hovered');
+      }); */
