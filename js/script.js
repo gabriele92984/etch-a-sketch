@@ -6,7 +6,6 @@ grid.style.width = `${gridArea}px`;
 grid.style.height = `${gridArea}px`;
 
 function createGrid() {
-
   for (let i = 0; i < (Math.pow(cellSize, 2)); i++) {
     const gridCell = document.createElement("div");
 
@@ -21,17 +20,18 @@ function createGrid() {
 createGrid();
 
 
-const gridCell = document.querySelectorAll('.cell');
+const gridCell = document.querySelectorAll(".cell");
+// Add event listeners for hover effect
+gridCell.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    item.classList.add('hovered');
+  });
+});
 
-    // Add event listeners for hover effect
-    gridCell.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        item.classList.add('hovered');
-      });
-    });
-
-
-    // Add event listeners for remove hover effect 
-    /* item.addEventListener('mouseleave', () => {
-        item.classList.remove('hovered');
-      }); */
+const resetBtn = document.getElementById("resetButton");
+// Add event listeners for remove hover effect 
+gridCell.forEach(item => {
+  resetBtn.addEventListener('click', () => {
+    item.classList.remove('hovered');
+  });
+});
