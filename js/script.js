@@ -1,11 +1,9 @@
 const gridArea = 600;
-let cellSize = 16; 
 
-const grid = document.querySelector("#grid");
-grid.style.width = `${gridArea}px`;
-grid.style.height = `${gridArea}px`;
+const gridContainer = document.getElementById("grid-container");
+gridContainer.style.width = `${gridArea}px`;
 
-function createGrid() {
+function createGrid(cellSize) {
   for (let i = 0; i < (Math.pow(cellSize, 2)); i++) {
     const gridCell = document.createElement("div");
 
@@ -13,25 +11,23 @@ function createGrid() {
     gridCell.style.height = `${(gridArea / cellSize) -2}px`;
     gridCell.classList.add("cell");
 
-    grid.appendChild(gridCell);
+    gridContainer.appendChild(gridCell);
   }
 }
-
-createGrid();
-
+createGrid(16);
 
 const gridCell = document.querySelectorAll(".cell");
 // Add event listeners for hover effect
 gridCell.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    item.classList.add('hovered');
+  item.addEventListener("mouseenter", () => {
+    item.classList.add("hovered");
   });
 });
 
-const resetBtn = document.getElementById("resetButton");
+const resetBtn = document.getElementById("clear-btn");
 // Add event listeners for remove hover effect 
 gridCell.forEach(item => {
-  resetBtn.addEventListener('click', () => {
-    item.classList.remove('hovered');
+  resetBtn.addEventListener("click", () => {
+    item.classList.remove("hovered");
   });
 });

@@ -2,7 +2,8 @@ body {
   margin:0;
   padding: 0;
   box-sizing: border-box;
-  background-color: azure;
+  background-color: lightsteelblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header {
@@ -13,20 +14,28 @@ header {
 }
 
 h1 {
-  margin: 30px auto;
+  margin: 50px auto;
+}
+
+#btn-container {
+  display: flex;
+  width: 600px;
+  justify-content: space-evenly
 }
 
 button {
   font-size: medium;
   padding: 4px 8px;
+  border: 3px solid black ;
   border-radius: 10px;
 }
 
-#grid {
+#grid-container {
   display: flex;
   flex-wrap: wrap;
   margin: 15px auto;
   background-color: lightyellow;
+  border: 5px solid lightgrey;
 }
 
 .cell {
